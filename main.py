@@ -8,7 +8,6 @@ def get_apikey():
     config = configparser.ConfigParser()
     config.read('app.config')
     apikey_from_file = config['secrets']['apikey']
-    print(apikey_from_file)
     return apikey_from_file
 
 
