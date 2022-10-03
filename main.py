@@ -2,6 +2,8 @@ import requests
 import configparser
 
 
+# get the API kiey from the config file and return it to the caller.
+#
 def get_apikey():
     config = configparser.ConfigParser()
     config.read('app.config')
@@ -27,9 +29,9 @@ def get_location():
     return key
 
 
-def get_conditions(key):
+def get_conditions(key, api_key):
     conditions_url = 'https://dataservice.accuweather.com/currentconditions/v1/' \
-        '{}?apikey=APIKEYGOESHERE'.format(key)
+        '{}?apikey={}'.format(key, api_key)
     response = requests.get(conditions_url)
     json_version = response.json()
     print("Current Conditions: {}".format(json_version[0].get('WeatherText')))
