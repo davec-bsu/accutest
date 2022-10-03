@@ -16,7 +16,6 @@ class NoSuchLocation(Exception):
     pass
 
 
-# Call the API to get the location
 def get_location():
     location_url = 'https://dataservice.accuweather.com/locations/v1/' \
                 'postalcodes/search?apikey=APIKEYGOESHERE&q=02324'
