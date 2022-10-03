@@ -12,10 +12,12 @@ def get_apikey():
     return apikey_from_file
 
 
+# A default exception handler
 class NoSuchLocation(Exception):
     pass
 
 
+# Call the API to get the location
 def get_location():
     location_url = 'https://dataservice.accuweather.com/locations/v1/' \
                 'postalcodes/search?apikey=APIKEYGOESHERE&q=02324'
